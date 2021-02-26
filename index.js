@@ -18,13 +18,13 @@ const piano = document.getElementById("piano");
 
 $(".click").mousedown(function(){
 
-$(this).css("background-color", "yellow");
+$(this).css("background", "yellow");
   var note = $(this).data("note");
   synth.triggerAttack(note);
 });
 
 $(".click").mouseup(function(){
-$(this).css("background-color", "white");
+$(this).css("background", "");
 
   synth.triggerRelease();
 });
@@ -44,30 +44,42 @@ document.addEventListener("keydown", e => {
   switch (res) {
 
     case "s":
+      $(".keyS").css("background", "yellow");
       return synth.triggerAttack("C4");
     case "r":
-      return synth.triggerAttack("E#4");
+    	$(".keyR").css("background", "yellow");
+      	return synth.triggerAttack("D#4");
     case "d":
-      return synth.triggerAttack("D4");
+    	$(".keyD").css("background", "yellow");
+      	return synth.triggerAttack("D4");
     case "f":
-      return synth.triggerAttack("E4");
-    case "t":
-      return synth.triggerAttack("F#4");
+    	$(".keyF").css("background", "yellow");
+      	return synth.triggerAttack("E4");
+    case "i":
+    	$(".keyI").css("background", "yellow");
+      	return synth.triggerAttack("A#4");
     case "g":
-      return synth.triggerAttack("F4");
+    	$(".keyG").css("background", "yellow");
+      	return synth.triggerAttack("F4");
     case "h":
-      return synth.triggerAttack("G4");
+    	$(".keyH").css("background", "yellow");
+      	return synth.triggerAttack("G4");
     case "y":
-      return synth.triggerAttack("A#4");
+    	$(".keyY").css("background", "yellow");
+      	return synth.triggerAttack("F#4");
     case "j":
-      return synth.triggerAttack("A4");
+    	$(".keyJ").css("background", "yellow");
+      	return synth.triggerAttack("A4");
     case "u":
-      return synth.triggerAttack("B#4");
+    	$(".keyU").css("background", "yellow");
+      	return synth.triggerAttack("G#4");
 	case "k":
-      return synth.triggerAttack("B4");
+		$(".keyK").css("background", "yellow");
+      	return synth.triggerAttack("B4");
 
     case "e":
-      return synth.triggerAttack("D#4");
+    	$(".keyE").css("background", "yellow");
+      	return synth.triggerAttack("C#4");
     default:
       return;
   }
@@ -78,29 +90,42 @@ document.addEventListener("keyup", e => {
 	var res = key_val.toLowerCase();
   switch (res) {
     case "s":
-
-    case "r":
+    	$(".keyS").css("background","");
 
     case "d":
+    	$(".keyD").css("background","");
 
     case "f":
+    	$(".keyF").css("background","");
 
-    case "t":
+    case "i":
+    	$(".keyI").css("background","");
 
     case "g":
+    	$(".keyG").css("background","");
 
     case "h":
+    	$(".keyH").css("background","");
 
     case "y":
 
+    	$(".keyY").css("background","");
     case "j":
 
+    	$(".keyJ").css("background","");
     case "u":
 
+    	$(".keyU").css("background","");
 	case "k":
 
+		$(".keyK").css("background","");
     case "e":
 
+    	$(".keyE").css("background","");
+
+    case "r":
+
+    	$(".keyR").css("background","");
        synth.triggerRelease(); 
   }
 });
